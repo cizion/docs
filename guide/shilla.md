@@ -248,7 +248,7 @@ curl -v -X GET https://passport.livere.com/v1/logout
 | :-------- | :-------------------- | :--: |
 | 트위터   | twitter      | O   |
 | 페이스북     | facebook  | O   |
-| 구글     | google_plus  | O   |
+| 구글     | google  | O   |
 | 링크드인     | linkedin  | O   |
 | 네이버     | naver  | O   |
 | 카카오톡     | kakao  | O   |
