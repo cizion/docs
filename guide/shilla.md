@@ -82,7 +82,7 @@
 	**[Request 예]**
 	
 	```
-	curl -v -X GET https://passport.livere.com/v1/auth/facebook
+	curl -v -X GET https://passport.livere.com/v1/valid
 	 -d 'token={{secretToken}}' \
 	 -d 'code={{code}}'
 	```
