@@ -1,5 +1,4 @@
 # 라이브리 소셜 로그인 API 명세 
-``rev.1.201510051400`` ``Tamm``
 
 ## 1. 라이브리 소셜 로그인 인증 프로세스
 - 전체적인 라이브리 소셜 로그인 인증 프로세스는 다음과 같습니다.
@@ -76,14 +75,14 @@
 	
 	| 키  | 설명 | 필수         |
 	| :-------- | :-------------------- | :--: |
-	| token   | 사전에 전달된 비밀 토큰      | O   |
+	| secretToken   | 사전에 전달된 비밀 토큰      | O   |
 	| code     | 회원 정보 요청 CODE  | O   |
 	
 	**[Request 예]**
 	
 	```
 	curl -v -X GET https://passport.livere.com/v1/valid
-	 -d 'token={{secretToken}}' \
+	 -d 'secretToken={{secretToken}}' \
 	 -d 'code={{code}}'
 	```
 	
@@ -189,14 +188,14 @@ curl -v -X GET https://passport.livere.com/v1/logout
 	
 	| 키  | 설명 | 필수         |
 	| :-------- | :-------------------- | :--: |
-	| token   | 사전에 전달된 비밀 토큰      | O   |
+	| secretToken   | 사전에 전달된 비밀 토큰      | O   |
 	| code     | 회원 정보 요청 CODE  | O   |
 	
 	**[Request 예]**
 	
 	```
-	curl -v -X GET https://passport.livere.com/v1/auth/facebook
-	 -d 'token={{secretToken}}' \
+	curl -v -X GET https://passport.livere.com/v1/valid
+	 -d 'secretToken={{secretToken}}' \
 	 -d 'code={{code}}'
 	```
 	
@@ -252,7 +251,10 @@ curl -v -X GET https://passport.livere.com/v1/logout
 | 링크드인     | linkedin  | O   |
 | 네이버     | naver  | O   |
 | 카카오톡     | kakao  | O   |
-| 웨이보     | weibo  | X   |
+| 인스타그램     | instagram  | O   |
+| 웨이보     | weibo  | O   |
+| 런런왕     | renren  | O   |
+| 도우반     | douban  | O   |
 | 바이두     | baidu  | X   |
 | QQ     | qq  | X   |
 | WeChat     | wechat  | X   |
