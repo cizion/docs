@@ -1,6 +1,8 @@
 # 라이브리 댓글 동기화 가이드
 
-## 1. 기본 설정
+## 1. 개요
+
+- 라이브리는 사용자가 해당 라이브리에서 글을 작성하거나 삭제 할 때 마다 아래 설정된 함수로 데이터를 전달합니다. 아래 내용들을 참고하셔서 넘겨 받은 데이터를 자체 데이터베이스에 저장하시거나 갱신 하시면 됩니다.
 
 - 라이브리 댓글 동기화를 위해서는 라이브리가 설치된 페이지에 다음과 같은 JavaScript 코드를 삽입해 주셔야 합니다.
 
@@ -35,14 +37,16 @@ window.livereHooks = {
 
 ```
 {
-	content: "댓글 내용",
-	id: "사용자 SNS 고유 ID",
-	name: "사용자 이름",
-	profile: "사용자 프로필 이미지 URL",
-	regdate: "작성일(Date 객체)",
-	replySeq: "댓글 번호",
-	strategy: "사용자 SNS 종류"
-	type: "write"
+	content: (TEXT) "댓글 내용",
+	id: (STRING) "사용자 SNS 고유 ID",
+	memberGroupSeq: (INTEGER) "사용자의 라이브리 고유 회원 번호",
+	name: (STRING) "사용자 이름",
+	profile: (TEXT) "사용자 프로필 이미지 URL",
+	regdate: (DATETIME) "작성일(Date 객체)",
+	replySeq: (INTEGER) "댓글 번호",
+	septSns: (STRING) "공유한 SNS"
+	strategy: (STRING) "사용자 SNS 종류"
+	type: (STRING) "write"
 }
 ```
 
@@ -50,8 +54,9 @@ window.livereHooks = {
 
 ```
 {
-	id: "사용자 SNS 고유 ID", 
-	replySeq: "댓글 번호", 
-	type: "remove"
+	id: (STRING) "사용자 SNS 고유 ID", 
+	memberGroupSeq: (INTEGER) "사용자의 라이브리 고유 회원 번호",
+	replySeq: (INTEGER) "댓글 번호", 
+	type: (STRING) "remove"
 }
 ```
