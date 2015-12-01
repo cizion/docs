@@ -62,7 +62,7 @@
 3. **회원 정보 요청**
 
 	* 클라이언트로 전달된 ``CODE``를 통해 현재 라이브리에 로그인 한 사용자의 정보를 받아옵니다.
-	* **반드시 서버에서 요청을 진행해 주시기 바랍니다.**
+	* ``secretToken``은 절대 외부로 유출되면 안되기 때문에 **반드시 서버에서 요청을 진행해 주시기 바랍니다.**
 	
 	**[Request]**
 
@@ -71,7 +71,7 @@
 	Host: passport.livere.com
 	```	
 	
-	아래 파라메터들을 GET으로 요청 합니다.
+	아래 파라메터들을 서버에서 GET으로 요청 합니다.
 	
 	| 키  | 설명 | 필수         |
 	| :-------- | :-------------------- | :--: |
@@ -148,18 +148,27 @@ curl -v -X GET https://passport.livere.com/v1/logout
 1. **연동 해제 요청**
 
 	* 연동 해제 API는 로그인 프로세스와 동일한 프로세스로 진행 됩니다.
+	* 해당 API는 클라이언트에서 호출해야 합니다.
 	
 	**[Request]**
 	
 	```
-	GET /v1/auth/release/{{SOCIAL_MEDIA_NAME}} HTTP/1.1
+	GET /v1/release HTTP/1.1
 	Host: passport.livere.com
 	```	
+	
+	아래 파라메터들을 클라이언트에서 GET으로(AJAX) 요청 합니다.
+	
+	| 키  | 설명 | 필수         |
+	| :-------- | :-------------------- | :--: |
+	| memberSeq   | 연동 해제할 memberSeq      | O   |
+
 	
 	**[Request 예]**
 	
 	```
-	curl -v -X GET https://passport.livere.com/v1/auth/release/facebook
+	curl -v -X GET https://passport.livere.com/v1/release
+	-d 'memberSeq=1239532'
 	```
 	
 	**[Response]**
@@ -167,6 +176,7 @@ curl -v -X GET https://passport.livere.com/v1/logout
 	```
 	HTTP/1.1 200 OK
 	{
+		"message": "Release complete",
         "code": "7f7761cffd492153cbad728c",
 	}
 	```
@@ -175,7 +185,7 @@ curl -v -X GET https://passport.livere.com/v1/logout
 
 	* 전달된 ``CODE``를 통해 현재 라이브리에 로그인 한 사용자의 정보를 갱신합니다.
 	* ``로그인 API`` 문서의 ``1-3 회원 정보 요청`` 부분과 동일한 API 입니다.
-	* **반드시 서버에서 요청을 진행해 주시기 바랍니다.**
+	* ``secretToken``은 절대 외부로 유출되면 안되기 때문에 **반드시 서버에서 요청을 진행해 주시기 바랍니다.**
 	
 	**[Request]**
 
@@ -184,7 +194,7 @@ curl -v -X GET https://passport.livere.com/v1/logout
 	Host: passport.livere.com
 	```	
 	
-	클라이언트에서 아래 파라메터들을 ajax로(GET) 요청 합니다.
+	아래 파라메터들을 서버에서 GET으로 요청 합니다.
 	
 	| 키  | 설명 | 필수         |
 	| :-------- | :-------------------- | :--: |
