@@ -61,3 +61,16 @@ window.livereWidgetOptions = {
 
 - 테스트 페이지는 다음 URL을 참고해주시기 바랍니다.
 [테스트 페이지](http://test.livere.co.kr/city/widget.html)
+
+## 3. 가로 사이즈 설정
+
+- 가로 사이즈를 설정하기 위해서는 `window` 스코프, 즉 전역 스코프에 `livereWidgetOptions` 변수가 선언되어 있어야 합니다.
+- 가로 사이즈를 설정하는 방법은 다음과 같습니다.
+
+```
+window.livereWidgetOptions = {
+	width: 250px
+};
+```
+
+- 최소 200px, 최대 300px 사이에서 설정할 수 있습니다.
