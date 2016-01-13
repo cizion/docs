@@ -94,3 +94,16 @@ window.livereWidgetOptions = {
 	height: '50px'
 };
 ```
+
+## 5. 위젯 정렬 설정
+
+- 위젯을 정렬하기 위해서는 `window` 스코프, 즉 전역 스코프에 `livereWidgetOptions` 변수가 선언되어 있어야 합니다.
+- 위젯 정렬은 `left`, `center`, `right` 중 선택 가능합니다.(기본 `center`)
+- 위젯을 정렬하는 방법은 다음과 같습니다.
+
+```
+window.livereWidgetOptions = {
+	...
+	align: 'right'
+};
+```
