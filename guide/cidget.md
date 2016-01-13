@@ -13,7 +13,8 @@
 			target: 'cidget', // cidget 고정
             size: 72, // 위젯 크기 선택
 			width: '300px', // 위젯 가로 사이즈 설정
-			height: '80px' // 위젯 세로 사이즈 설정
+			height: '80px', // 위젯 세로 사이즈 설정
+			align: 'right' // 위젯 정렬 설정
 		};
 
 		(function(d, s) {
