@@ -96,6 +96,15 @@ window.livereWidgetOptions = {
 };
 ```
 
+- 또한 위젯 내부 사이즈를 다음과 같이 설정할 수 있습니다.
+
+```
+window.livereWidgetOptions = {
+	...
+	innerWidth: '350px'
+};
+```
+
 ## 5. 위젯 정렬 설정
 
 - 위젯을 정렬하기 위해서는 `window` 스코프, 즉 전역 스코프에 `livereWidgetOptions` 변수가 선언되어 있어야 합니다.
