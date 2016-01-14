@@ -49,23 +49,23 @@ window.livereWidgetOptions = {
 
 - 지원 현황은 다음과 같습니다.
 
-| 이름  | 파라메터 | 모바일 전용 |
-| :-------- | :-------------------- | :--- |
-| 트위터   | twitter      | X |
-| 페이스북     | facebook  | X |
-| 구글 플러스 | google_plus | X |
-| 네이버     | naver  | X |
-| 카카오톡     | kakao  | O |
-| 카카오 스토리     | story  | X |
-| 믹시     | mixi  | X |
-| 라인 | line | O |
-| 웨이보     | weibo  | X |
-| 런런왕     | renren  | X |
-| Qzone     | qzone  | X |
-| 텐센트 웨이보     | tencent  | X |
-| 카이신왕     | kaixin  | X |
-| 도우반     | douban  | X |
-| 바이두 티에바     | tieba  | X |
+| 이름  | 파라메터 | 모바일 전용 | 사용 파라메터 |
+| :-------- | :-------------------- | :--- | :--- |
+| 트위터   | twitter      | X | title, url |
+| 페이스북     | facebook  | X | url |
+| 구글 플러스 | google_plus | X | url |
+| 네이버     | naver  | X | title, url |
+| 카카오톡     | kakao  | O | title, url |
+| 카카오 스토리     | story  | X | url |
+| 믹시     | mixi  | X | url |
+| 라인 | line | O | title, url |
+| 웨이보     | weibo  | X | title, url |
+| 런런왕     | renren  | X | title, url |
+| Qzone     | qzone  | X | title, url |
+| 텐센트 웨이보     | tencent  | X | title, url |
+| 카이신왕     | kaixin  | X | title, url, image |
+| 도우반     | douban  | X | title, url, image |
+| 바이두 티에바     | tieba  | X | url |
 
 - 테스트 페이지는 다음 URL을 참고해주시기 바랍니다.
 [테스트 페이지](http://test.livere.co.kr/city/cidget.html)
