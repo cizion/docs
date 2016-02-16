@@ -14,7 +14,9 @@
             size: 72, // 위젯 크기 선택
 			width: '300px', // 위젯 가로 사이즈 설정
 			height: '80px', // 위젯 세로 사이즈 설정
-			align: 'right' // 위젯 정렬 설정
+			align: 'right' // 위젯 정렬 설정,
+			facebookAppId: ... // 페이스북 App Id 설정
+			kakaoAppKey: ... // 카카오톡 App Key 설정
 		};
 
 		(function(d, s) {
@@ -115,5 +117,25 @@ window.livereWidgetOptions = {
 window.livereWidgetOptions = {
 	...
 	align: 'right'
+};
+```
+
+## 6. 페이스북, 카카오톡 공유 설정
+
+- 페이스북과 카카오톡은 공유 URL에 대한 검증을 진행합니다.
+- 따라서 `appId`와 `appKey`를 각각 발급받아 이를 설정해 줘야 합니다.
+- 다음 URL에서 `appId`와 `appKey`를 발급 받으시길 바랍니다.
+
+[페이스북 개발자 사이트](https://developer.facebook.com)
+
+[카카오 개발자 사이트](https://dev.kakao.com)
+
+- `appId`와 `appKey`를 설정하는 방법은 다음과 같습니다.
+
+```
+window.livereWidgetOptions = {
+	...
+	facebookAppId: ... // 페이스북 App Id 설정
+	kakaoAppKey: ... // 카카오톡 App Key 설정
 };
 ```
