@@ -268,6 +268,27 @@ curl -v -X GET https://passport.livere.com/v1/logout
 | 바이두     | baidu  | X   |
 | QQ     | qq  | X   |
 | WeChat     | wechat  | X   |
-| Yahoo Japan     | open_y_jp  | X   |
+| Yahoo Japan     | yj  | X   |
 | Mixi     | mixi  | X   |
 
+## 4. 각 SNS별 JSON 응답 키
+
+* API 응답 시 내려오는 JSON SNS 키 목록입니다.
+
+| 이름  | Key | 
+| :-------- | :-------------------- |
+| 트위터   | twitter      |
+| 페이스북     | facebook  |
+| 구글     | google_plus  |
+| 링크드인     | linkedIn  |
+| 네이버     | naver  |
+| 카카오톡     | kakao  |
+| 인스타그램     | instagram  |
+| 웨이보     | weibo_sina  |
+| 런런왕     | renren  |
+| 도우반     | douban  |
+| 바이두     | baidu  |
+| QQ     | qq  |
+| WeChat     | wechat  |
+| Yahoo Japan     | open\_y_jp  |
+| Mixi     | mixi  |
