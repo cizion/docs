@@ -25,7 +25,7 @@
 			if (typeof Toybox === 'function') { return; }
 
 			j = d.createElement(s);
-			j.src = 'https://cdn-city.livere.com/js/toybox.dist.js';
+			j.src = 'https://101.livere.co.kr/js/toybox.dist.js';
 			j.async = true;
 
 			e.parentNode.insertBefore(j, e);
