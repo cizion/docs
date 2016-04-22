@@ -139,3 +139,17 @@ window.livereWidgetOptions = {
 	kakaoAppKey: ... // 카카오톡 App Key 설정
 };
 ```
+
+## 7. 모바일 앱 내 WebView 사용 시
+
+- 페이스북의 경우 공유 후 공유 결과에 대한 메세지가 뜨지 않고 `window.close` 메소드를 호출하기 때문에 별도의 `redirect_uri` 설정이 필요합니다.
+- 따라서 WebView에서 사용 시 다음 내용을 `livereWidgetOptions` 내에 설정하셔야 합니다.
+
+```
+window.livereWidgetOptions = {
+	...
+	webview: true // WebView 설정
+};
+```
+
+- 해당 옵션은 PC, 모바일 웹에서는 사용하지 마시고 꼭 WebView 내에서 페이지가 로드되었을 때만 사용해야 합니다.
