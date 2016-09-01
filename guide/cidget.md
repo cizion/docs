@@ -81,9 +81,11 @@ window.livereWidgetOptions = {
 ```
 window.livereWidgetOptions = {
 	...
-	size: 72 // 24,48,72,99 중 선택
+	size: 72 // 24,48,72,74,99 중 선택
 };
 ```
+
+- 74 사이즈의 경우 아이콘의 양 옆 `margin`이 `14px`로 고정됩니다.
 
 ## 4. 위젯 사이즈(가로 세로 크기) 설정
 
