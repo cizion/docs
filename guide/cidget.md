@@ -51,41 +51,39 @@ window.livereWidgetOptions = {
 
 - 지원 현황은 다음과 같습니다.
 
-| 이름  | 파라메터 | 모바일 전용 | 사용 파라메터 |
-| :-------- | :-------------------- | :--- | :--- |
-| 트위터   | twitter      | X | title, url |
-| 페이스북     | facebook  | X | url |
-| 구글 플러스 | google_plus | X | url |
-| 네이버     | naver  | X | title, url |
-| 카카오톡     | kakao  | O | title, url |
-| 카카오 스토리     | story  | X | url |
-| 믹시     | mixi  | X | url |
-| 라인 | line | O | title, url |
-| 웨이보     | weibo  | X | title, url |
-| 런런왕     | renren  | X | title, url |
-| Qzone     | qzone  | X | title, url |
-| 텐센트 웨이보     | tencent  | X | title, url |
-| 카이신왕     | kaixin  | X | title, url, image |
-| 도우반     | douban  | X | title, url, image |
-| 바이두 티에바     | tieba  | X | url |
+| 이름      | 파라메터        | 모바일 전용 | 사용 파라메터           |
+| :------ | :---------- | :----- | :---------------- |
+| 트위터     | twitter     | X      | title, url        |
+| 페이스북    | facebook    | X      | url               |
+| 구글 플러스  | google_plus | X      | url               |
+| 네이버     | naver       | X      | title, url        |
+| 카카오톡    | kakao       | O      | title, url        |
+| 카카오 스토리 | story       | X      | url               |
+| 믹시      | mixi        | X      | url               |
+| 라인      | line        | O      | title, url        |
+| 웨이보     | weibo       | X      | title, url        |
+| 런런왕     | renren      | X      | title, url        |
+| Qzone   | qzone       | X      | title, url        |
+| 텐센트 웨이보 | tencent     | X      | title, url        |
+| 카이신왕    | kaixin      | X      | title, url, image |
+| 도우반     | douban      | X      | title, url, image |
+| 바이두 티에바 | tieba       | X      | url               |
 
 - 테스트 페이지는 다음 URL을 참고해주시기 바랍니다.
-[테스트 페이지](http://test.livere.co.kr/city/cidget.html)
+  [테스트 페이지](http://test.livere.co.kr/city/cidget.html)
 
 ## 3. 위젯 아이콘 크기 설정
 
 - 위젯 아이콘 크기를 설정하기 위해서는 `window` 스코프, 즉 전역 스코프에 `livereWidgetOptions` 변수가 선언되어 있어야 합니다.
-- 아이콘 크기는 PC용(24, 48), 모바일용으로(72, 99) 구분되어 있습니다.
+- 아이콘 크기는 PC용(24, 48), 모바일용으로(37, 72, 74, 99) 구분되어 있습니다.
 - 아이콘 크기를 설정하는 방법은 다음과 같습니다.
 
 ```
 window.livereWidgetOptions = {
 	...
-	size: 72 // 24,48,72,74,99 중 선택
+	size: 72 // 24,37,48,72,74,99 중 선택
 };
 ```
-
-- 74 사이즈의 경우 아이콘의 양 옆 `margin`이 `14px`로 고정됩니다.
 
 ## 4. 위젯 사이즈(가로 세로 크기) 설정
 
@@ -155,3 +153,17 @@ window.livereWidgetOptions = {
 ```
 
 - 해당 옵션은 PC, 모바일 웹에서는 사용하지 마시고 꼭 WebView 내에서 페이지가 로드되었을 때만 사용해야 합니다.
+
+## 8. 커스텀 CSS 스타일
+
+- `iframe` 내 `CSS` 스타일을 다음과 같이 임의로 지정할 수 있습니다.
+
+```
+window.livereWidgetOptions = {
+	...
+	customStyle: '#container .list { padding: 19px 12px 20px 18px } #container button { margin: 0px 11.5px; } #container button:first-child { margin-left: 0px; } #container button:last-child { margin-right: 0px; }'
+};
+```
+- `livereWidgetOptions.margin` 옵션을 사용하는 경우 `margin` 옵션은 무시됩니다.
+
+  ​
