@@ -126,7 +126,7 @@
 	}
 	```
 
-### 2. 로그아웃 API
+### <a name="logout"></a>2. 로그아웃 API
 
 **[Request]**
 
@@ -181,7 +181,50 @@ curl -v -X GET https://passport.livere.com/v1/logout
 	}
 	```
 
-2. **회원 정보 요청**
+2. **토큰을 이용하여 회원 연동 해제**
+
+	* 해당 API는 항상 서버에서 호출해주시길 바랍니다.
+	* 라이브리에 해당 SNS 계정이 하나만 로그인 되어 있는 상태에는 동작하지 않습니다.
+	* 네이버의 경우 신라면세점은 `dfsn`으로 HDC면세점은 `hdcn`으로 요청해주셔야 합니다.
+	
+	**[Request]**
+
+	```
+	POST /v1/toolbox/release HTTP/1.1
+	Host: passport.livere.com
+	```
+
+	아래 파라메터들을 서버에서 POST 요청 합니다.
+
+	| 키  | 설명 | 필수         |
+	| :-------- | :-------------------- | :--: |
+	| memberSeq   | 연동 해제할 memberSeq      | O   |
+	| secretToken   | 사전에 전달된 비밀 토큰      | O   |
+	| code     | 회원 정보 요청 CODE  | X   |
+
+	**[Request 예]**
+
+	```
+	curl -v -X POST https://passport.livere.com/v1/toolbox/release
+	-d 'memberSeq=1239532'
+	-d 'secretToken=fk2pck23kpokopnrwi'
+	-d 'code=j3j2093jr023'
+	```
+
+	**[Response]**
+
+	```
+	HTTP/1.1 200 OK
+	{
+		"message": "Release complete",
+        "code": "7f7761cffd492153cbad728c",
+	}
+	```
+	
+	* 만약 `code`를 저장하고 있지 않아 요청 시 보내지 않은 경우 클라이언트에서 [로그아웃 API](#logout)를 날려주셔야 합니다.
+	* `code` 파라메터를 제외한 경우 응답 값 중 `code`는 내려오지 않습니다.
+
+3. **회원 정보 요청**
 
 	* 전달된 ``CODE``를 통해 현재 라이브리에 로그인 한 사용자의 정보를 갱신합니다.
 	* ``로그인 API`` 문서의 ``1-3 회원 정보 요청`` 부분과 동일한 API 입니다.
@@ -249,6 +292,7 @@ curl -v -X GET https://passport.livere.com/v1/logout
 	}
 	```
 
+
 ## 3. 소셜 미디어 파라메터
 
 * API 요청 시 파라메터로 들어가는 ``소셜 미디어 파라메터(SOCIAL_MEDIA_NAME)`` 정보입니다.
@@ -265,11 +309,13 @@ curl -v -X GET https://passport.livere.com/v1/logout
 | 웨이보     | weibo  | O   |
 | 런런왕     | renren  | O   |
 | 도우반     | douban  | O   |
-| 바이두     | baidu  | X   |
-| QQ     | qq  | X   |
-| WeChat     | wechat  | X   |
-| Yahoo Japan     | yj  | X   |
-| Mixi     | mixi  | X   |
+| 바이두     | baidu  | O   |
+| QQ     | qq  | O   |
+| WeChat     | wechat  | O   |
+| Yahoo Japan     | yj  | O   |
+| Mixi     | mixi  | O   |
+| Line     | line  | O |
+| Pinterest | pinterest | O |
 
 ## 4. 각 SNS별 JSON 응답 키
 
@@ -293,3 +339,5 @@ curl -v -X GET https://passport.livere.com/v1/logout
 | 알리페이 | alipay |
 | Yahoo Japan     | open\_y_jp  |
 | Mixi     | mixi  |
+| Line     | line  |
+| Pinterest | pinterest |
