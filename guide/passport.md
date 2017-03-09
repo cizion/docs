@@ -4,7 +4,7 @@
 - 전체적인 라이브리 소셜 로그인 인증 프로세스는 다음과 같습니다.
 - 해당 프로세는 ``1. 로그인 / 추가 회원연동 API`` 및 ``3. 회원 연동 해제 API`` 에서 사용 됩니다.
 
-![소셜 로그인 프로세스](http://test.livere.co.kr/passport.sample/sociallogin.png)
+![소셜 로그인 프로세스](http://cdn-city.livere.com/passport.sample.png)
 
 ## 2. API 명세
 
