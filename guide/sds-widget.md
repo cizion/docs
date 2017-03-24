@@ -15,7 +15,8 @@
             list: ['twitter', 'facebook', 'linkedIn', 'kakaotalk'],
             customCss: 'https://cdn-city.livere.com/consumers/sds/sds.css',
             /*카카오톡 app key 설정*/
-            kakaoAppKey: 'KAKAO_APP_KEY'
+            kakaoAppKey: 'KAKAO_APP_KEY',
+            lazy: true
         };
 
         (function(d, s) {
@@ -41,7 +42,8 @@
     <script type="text/javascript">
         window.livereWidgetOptions = {
             list: ['weibo_sina', 'renren'],
-            customCss: 'https://cdn-city.livere.com/consumers/sds/sds.css'
+            customCss: 'https://cdn-city.livere.com/consumers/sds/sds.css',
+            lazy: true
         };
 
         (function(d, s) {
@@ -148,3 +150,26 @@ window.livereWidgetOptions = {
 <meta property="og:image" content="http://image.samsungsds.com/global/ko/images/logo.png" />
 <title>삼성 SDS 테스트</title>
 ```
+
+## 7. SDS 닷컴 적용 사항
+
+- 현재 SDS 닷컴 형태의 공유 기능을 사용하기 위해서는 다음과 같은 적용 과정이 필요합니다.
+(http://www.samsungsds.com/global/support/resources?lang=ko 플로우 참고)
+
+1. 페이지 로드 시 공유하기 버튼이 들어갈 각 영역에 다음 div를 생성합니다.
+
+```
+<div class="test1" data-id="samsung_sds" data-uid="MTIxNC8yNzg2NC80NDQy" data-url="URL" data-title="TITLE" data-image="IMG_URL"></div>
+```
+
+- `data-id`, `data-uid`는 필수적으로 들어가야 하며 `data-url`, `data-title`, `data-image`는 선택 사항입니다.
+
+2. `window.livereOptions` 내 `lazy: true` 설정 시 최초 스크립트 실행 때 위젯이 로드되지 않게 설정할 수 있습니다.
+3. 다음으로 사용자가 [공유하기] 버튼을 눌렀을 때 다음 스크립트를 실행하십시오.
+
+```
+Toybox.reloadTo(SELECTOR);
+// e.g) Toybox.reloadTo('.test1');
+```
+
+- 해당 플로우에 대한 테스트 페이지는 [한국 테스트 페이지](http://test.livere.co.kr/city/sds-widget.html) 에서 확인할 수 있습니다.
