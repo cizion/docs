@@ -44,7 +44,7 @@ window.livereWidgetOptions = {
 - 지원 되는 SNS는 크게 2가지 부류로 나뉩니다.
 	1. REST API를 사용하는 SNS
 	2. 클라이언트 API, 혹은 링크 공유를 지원하는 SNS
-	
+
 - 지원 현황은 다음과 같습니다.
 
 | 이름  | 파라메터 | 클라이언트 API         |
@@ -52,10 +52,11 @@ window.livereWidgetOptions = {
 | 트위터   | twitter      | X   |
 | 페이스북     | facebook  | X   |
 | 네이버     | naver  | X   |
-| 카카오톡     | kakao  | X   |
+| 카카오 스토리     | kakao  | X   |
+| 링크드인   | linkedIn | X  |
 | Mixi     | mixi  | X   |
-| 웨이보     | weibo_sina  | O   |
-| 런런왕     | renren  | O   |
+| 웨이보     | weibo_sina  | X   |
+| 런런왕     | renren  | X   |
 | Qzone(QQ)     | qq  | O   |
 | 텐센트 웨이보     | tencent  | O   |
 
@@ -74,3 +75,33 @@ window.livereWidgetOptions = {
 ```
 
 - 최소 200px, 최대 300px 사이에서 설정할 수 있습니다.
+
+## 4. 카카오톡 공유 설정
+
+- 카카오톡은 공유 URL에 대한 검증을 진행합니다.
+- 따라서 `appId`와 `appKey`를 각각 발급받아 이를 설정해 줘야 합니다.
+- 다음 URL에서 `appId`와 `appKey`를 발급 받으시길 바랍니다.
+
+[카카오 개발자 사이트](https://dev.kakao.com)
+
+- `appId`와 `appKey`를 설정하는 방법은 다음과 같습니다.
+
+```
+window.livereWidgetOptions = {
+	...
+	kakaoAppKey: ... // 카카오톡 App Key 설정
+};
+```
+
+## 5. 커스텀 CSS 스타일
+
+- `iframe` 내 `CSS` 스타일을 다음과 같이 임의로 지정할 수 있습니다.
+
+```
+window.livereWidgetOptions = {
+	...
+	customStyle: '#container .list { padding: 19px 12px 20px 18px } #container button { margin: 0px 11.5px; } #container button:first-child { margin-left: 0px; } #container button:last-child { margin-right: 0px; }'
+};
+```
+
+  ​
