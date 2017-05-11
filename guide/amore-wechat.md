@@ -108,7 +108,7 @@ HTTP/1.1 200 OK
 }
 ```
 
-- 라이브리 서버에서 정상적으로 `code`가 내려왔다면 이후 [패스포트 회원 정보 요청 프로세스](https://github.com/cizion/docs/blob/master/guide/passport.md#1-로그인--추가-회원연동-api, 패스포트 가이드)를 진행하시면 됩니다.
+- 라이브리 서버에서 정상적으로 `code`가 내려왔다면 이후 [패스포트 회원 정보 요청 프로세스](https://github.com/cizion/docs/blob/master/guide/passport.md#1-로그인--추가-회원연동-api) 를 진행하시면 됩니다.
 - 만약 `200` 외 다른 `HTTP 상태 코드`가 내려온다면 다음 항목을 참고하시기 바랍니다.
 
 ```
