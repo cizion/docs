@@ -296,3 +296,53 @@ curl -v -X GET https://passport.livere.com/v1/logout
 | Mixi     | mixi  |
 | Line     | line  |
 | Pinterest | pinterest |
+
+## 5. 각 SNS별 Mobile WebView 로그인 지원
+
+* 일부 SNS는 각 사 정책으로 Mobile WebView 로그인을 지원하지 않고 별도 로그인 방식을 요구합니다. 
+
+| 이름  | Mobile WebView 로그인 지원 여부 |
+| :-------- | :-------------------- |
+| 트위터   | O      |
+| 페이스북     | O  |
+| 구글     | O  |
+| 링크드인     | O  |
+| 네이버     | O  |
+| 카카오톡     | O  |
+| 인스타그램     | O  |
+| 웨이보     | O  |
+| 런런왕     | O  |
+| 도우반     | O  |
+| 바이두     | O  |
+| QQ     | X  |
+| WeChat     | X  |
+| AliPay     | X  |
+| Yahoo Japan     | O  |
+| Mixi     | O  |
+| Line     | O  |
+| Pinterest | O |
+
+## 6. FAQ
+
+* facebook이 대표계정인 사용자가 baidu로 로그인하는 경우 대표계정이 facebook으로 처리됩니다.
+	* `force=true` 파라미터를 추가하시면 됩니다.
+
+       ```https://passport.livere.com/v1/auth/baidu?force=true```
+       
+* 핸드폰에서 실행 시 로그인 화면이 모바일 화면이 아닌 PC 화면으로 보입니다. 
+    * `display=mobile` 파라미터를 추가하시면 됩니다.
+
+       ```https://passport.livere.com/v1/auth/baidu?display=mobile```
+       
+*  passport.livere.com IP 주소가 계속 변경됩니다.
+    * 시지온 패스포트 서비스는 안정성을 위해서 AWS에서 실행됩니다. AWS 정책상 Load balancer는 고정 IP 유지가 어려워서 유동 IP를 사용합니다. 
+
+*  회사 방화벽 정책으로 인해서 passport.livere.com 접속 시 고정 IP가 필요합니다. 
+    * 대부분의 passport 기능은 일반 사용자 브라우저에서 실행되기 때문에 방화벽 정책에 의존적이지 않습니다.
+    * /v1/auth/valid 등의 서버에서 사용하는 내부 API의 경우에는 담당자를 통해서 별도로 문의주세요.  
+
+*  모바일에서 위챗 로그인시 오류가 발생합니다.
+    * AppID, AppSecret이 맞는지 확인합니다.
+    * Android의 경우에는 package name과 signature를 등록해야 하고, iOS의 경우에는 bundle name을 등록해야 합니다.
+    * Android의 경우에 Proguard에 WeChat SDK 관련 package가 예외처리 되어 있는지 확인합니다.
+    * 위 사항이 모두 이상이 없는데도 로그인 오류 발생시 담당자를 통해서 별도로 문의주세요.
