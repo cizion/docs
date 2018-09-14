@@ -27,11 +27,13 @@
 	```
 	* 아래 파라메터들을 포함해 클라이언트에서 ``window.open`` 함수를 통해 요청 합니다.
 
-	| 키  | 설명 | 필수         |
-	| :-------- | :-------------------- | :--: |
-	| redirectUrl   | 로그인 후 리다이렉트 할 고객사 페이지(전달된 양식)      | O   |
+	| 키  | 설명 | 필수         | 예시 |
+	| :-------- | :-------------------- | :--: | --- |
+	| redirectUrl   | 로그인 후 리다이렉트 할 고객사 페이지(전달된 양식)      | O   | |
+	| force    | 추가 연동이 아닌 해당 SNS로 로그인   | O   | `true`   |
 
 	* ``redirectUrl`` 파라메터의 경우 전달된 HTML 페이지를 고객사 쪽 도메인에 업로드 해주시면 됩니다.(``1. 라이브리 소셜 로그인 인증 프로세스`` 참고)
+  * 추가 회원연동이 아닌 해당 SNS로 로그인하려면 force=true 옵션을 주셔야 합니다. 자세한 것은 FAQ를 참고해주세요.
 
 2. **로그인 후 회원 정보 CODE 전달**
 
@@ -329,7 +331,7 @@ curl -v -X GET https://passport.livere.com/v1/logout
 
        ```https://passport.livere.com/v1/auth/baidu?force=true```
        
-* 핸드폰에서 실행 시 로그인 화면이 모바일 화면이 아닌 PC 화면으로 보입니다. 
+* 핸드폰에서 실행 시 **바이두** 로그인 화면이 모바일 화면이 아닌 PC 화면으로 보입니다.
     * `display=mobile` 파라미터를 추가하시면 됩니다.
 
        ```https://passport.livere.com/v1/auth/baidu?display=mobile```
