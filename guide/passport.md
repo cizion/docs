@@ -341,7 +341,7 @@ curl -v -X GET https://passport.livere.com/v1/logout
 
 *  회사 방화벽 정책으로 인해서 passport.livere.com 접속 시 고정 IP가 필요합니다. 
     * 대부분의 passport 기능은 일반 사용자 브라우저에서 실행되기 때문에 방화벽 정책에 의존적이지 않습니다.
-    * /v1/auth/valid 등의 서버에서 사용하는 내부 API의 경우에는 담당자를 통해서 별도로 문의주세요.  
+    * /v1/valid 등의 서버에서 사용하는 내부 API의 경우에는 담당자를 통해서 별도로 문의주세요.  
 
 *  모바일에서 위챗 로그인시 오류가 발생합니다.
     * AppID, AppSecret이 맞는지 확인합니다.
