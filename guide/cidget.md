@@ -65,10 +65,8 @@ window.livereWidgetOptions = {
 | 웨이보      | weibo       | X      | title, url, image              |
 | 런런왕      | renren      | X      | title, url, description, image |
 | Qzone    | qzone       | X      | title, url                     |
-| 텐센트 웨이보  | tencent     | X      | title, url                     |
 | 카이신왕     | kaixin      | X      | title, url, image              |
 | 도우반      | douban      | X      | title, url, image              |
-| 바이두 티에바  | tieba       | X      | url                            |
 | QQ       | qq          | X      | title, url, description, image |
 | 위챗 QR 코드 | wechat      | PC     | url                            |
 
