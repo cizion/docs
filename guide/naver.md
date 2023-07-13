@@ -16,11 +16,8 @@
 기존:
 `passport.livere.com/v1/auth/naver`
 
-변경(신라면세점):
-`https://passport.livere.com/redirect/to?url=https://cizion.shilladfs.com/v1/auth/naver&force=true`
-
-변경(HDC):
-`https://passport.livere.com/redirect/to?url=https://czo.shillaipark.com/v1/auth/naver&force=true`
+변경:
+`https://passport.livere.com/redirect/to?url=https://czo.website.com/v1/auth/naver&force=true`
 
 
 - 기존에 사용하시던 파라메터(e.g: `force=true`) 등은 `url` 파라메터 뒤에 붙여서 그대로 사용하시면 됩니다.
@@ -58,12 +55,5 @@ $.ajax({
 
 네이버 로그인 개발자 센터 내 `Callback URL` 을 다음과 같이 변경 해주시기 바랍니다.
 
-신라면세점: 
-
-1. `http://cizion.shilladfs.com/v1/auth/naver/callback`
-2. `https://cizion.shilladfs.com/v1/auth/naver/callback`
-	
-HDC: 
-
-1. `http://czo.shillaipark.com/v1/auth/naver/callback`
-2. `https://czo.shillaipark.com/v1/auth/naver/callback`
+1. `http://cizion.website.com/v1/auth/naver/callback`
+2. `https://cizion.website.com/v1/auth/naver/callback`
