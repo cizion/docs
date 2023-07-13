@@ -4,7 +4,6 @@
 - 전체적인 라이브리 소셜 로그인 인증 프로세스는 다음과 같습니다.
 - 해당 프로세는 ``1. 로그인 / 추가 회원연동 API`` 및 ``3. 회원 연동 해제 API`` 에서 사용 됩니다.
 
-![소셜 로그인 프로세스](http://test.livere.co.kr/passport.sample/sociallogin.png)
 
 ## 2. API 명세
 
@@ -23,7 +22,7 @@
 
 	```
 	curl -v -X GET https://passport.livere.com/v1/auth/facebook
-	 -d 'redirectUrl=https://www.shilladfs.com/../passport/redirect.html'
+	 -d 'redirectUrl=https://www.website.com/../passport/redirect.html'
 	```
 	* 아래 파라메터들을 포함해 클라이언트에서 ``window.open`` 함수를 통해 요청 합니다.
 
@@ -96,7 +95,7 @@
         "facebook": {
             "memberSeq": 14,
             "memberId": "100001468893891",
-            "memberName": "Tae Min Kwun",
+            "memberName": "User Name",
             "memberDomain": "facebook",
             "memberUrl": "http://www.facebook.com/100001468893891",
             "email": null,
@@ -110,7 +109,7 @@
         "kakao": {
             "memberSeq": 40,
             "memberId": "51314296",
-            "memberName": "Tamm",
+            "memberName": "UserName",
             "memberDomain": "kakao",
             "memberUrl": "https://story.kakao.com/_KP5Q35",
             "email": null,
@@ -140,8 +139,6 @@ Host: passport.livere.com
 ```
 curl -v -X GET https://passport.livere.com/v1/logout
 ```
-
-* 로그인, 로그아웃 API의 경우 [테스트 페이지](http://test.livere.co.kr/passport.sample) 소스 코드를 참고 하시기 바랍니다.
 
 ### 3. 회원 연동 해제 API
 
@@ -185,7 +182,7 @@ curl -v -X GET https://passport.livere.com/v1/logout
 
 	* 해당 API는 항상 서버에서 호출해주시길 바랍니다.
 	* 라이브리에 해당 SNS 계정이 하나만 로그인 되어 있는 상태에는 동작하지 않습니다.
-	* 네이버의 경우 신라면세점은 `dfsn`으로 HDC면세점은 `hdcn`으로 요청해주셔야 합니다.
+	* 네이버의 경우, 각각의 고객사는 해당하는 명칭으로 요청해주셔야 합니다. 
 	
 	**[Request]**
 
@@ -262,7 +259,7 @@ curl -v -X GET https://passport.livere.com/v1/logout
         "facebook": {
             "memberSeq": 14,
             "memberId": "100001468893891",
-            "memberName": "Tae Min Kwun",
+            "memberName": "user name",
             "memberDomain": "facebook",
             "memberUrl": "http://www.facebook.com/100001468893891",
             "email": null,
@@ -276,7 +273,7 @@ curl -v -X GET https://passport.livere.com/v1/logout
         "kakao": {
             "memberSeq": 40,
             "memberId": "51314296",
-            "memberName": "Tamm",
+            "memberName": "user name",
             "memberDomain": "kakao",
             "memberUrl": "https://story.kakao.com/_KP5Q35",
             "email": null,
