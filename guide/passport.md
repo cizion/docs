@@ -23,7 +23,7 @@
 
 	```GET
 	curl -v -X GET https://passport.livere.com/v1/auth/facebook
-	 -d 'redirectUrl=https://www.shilladfs.com/../passport/redirect.html'
+	 -d 'redirectUrl=https://www.website.com/../passport/redirect.html'
 	```
 	* 아래 파라메터들을 포함해 클라이언트에서 ``window.open`` 함수를 통해 요청 합니다.
 
