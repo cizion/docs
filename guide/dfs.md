@@ -204,8 +204,8 @@ curl -v -X GET https://passport.livere.com/v1/logout
 	```
 	curl -v -X POST https://passport.livere.com/v1/toolbox/release
 	-d 'memberSeq=1239532'
-	-d 'secretToken=fk2pck23kpokopnrwi'
-	-d 'code=j3j2093jr023'
+	-d 'secretToken={{secretToken}}'
+	-d 'code={{code}}'
 	```
 
 	**[Response]**
